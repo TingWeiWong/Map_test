@@ -5,7 +5,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Show your location on the map</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>In use</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleGetInfoString</key>

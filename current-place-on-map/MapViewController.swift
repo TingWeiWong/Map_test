@@ -24,6 +24,11 @@ class MapViewController: UIViewController {
   var mapView: GMSMapView!
   var placesClient: GMSPlacesClient!
   var zoomLevel: Float = 15.0
+  var filteringCount=0
+ 
+  var resultsViewController: GMSAutocompleteResultsViewController?
+  var searchController: UISearchController?
+  var resultView: UITextView?
 
   // An array to hold the list of likely places.
   var likelyPlaces: [GMSPlace] = []
@@ -52,6 +57,8 @@ class MapViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
 
     // Initialize the location manager.
     locationManager = CLLocationManager()
@@ -60,8 +67,8 @@ class MapViewController: UIViewController {
     locationManager.distanceFilter = 50
     locationManager.startUpdatingLocation()
     locationManager.delegate = self
-
     placesClient = GMSPlacesClient.shared()
+    
 
     // Create a map.
     let camera = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
@@ -90,16 +97,22 @@ class MapViewController: UIViewController {
         print("Current Place error: \(error.localizedDescription)")
         return
       }
+      self.filteringCount=0
 
       // Get likely places and add to the list.
       if let likelihoodList = placeLikelihoods {
         for likelihood in likelihoodList.likelihoods {
           let place = likelihood.place
-          self.likelyPlaces.append(place)
+            self.addtoPlacesListFiltered(p: place)
         }
       }
     })
   }
+    func addtoPlacesListFiltered(p:GMSPlace){
+        guard self.filteringCount<5 else{return}
+        self.likelyPlaces.append(p)
+        self.filteringCount+=1
+    }
 
   // Prepare the segue.
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -129,8 +142,6 @@ extension MapViewController: CLLocationManagerDelegate {
     } else {
       mapView.animate(to: camera)
     }
-
-    listLikelyPlaces()
   }
 
   // Handle authorization for the location manager.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71100B6420F4EC13006E8F3E /* Autocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71100B6320F4EC12006E8F3E /* Autocomplete.swift */; };
 		E50C79BB1E4CFDE9008ECCEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50C79BA1E4CFDE9008ECCEB /* AppDelegate.swift */; };
 		E50C79BD1E4CFDE9008ECCEB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50C79BC1E4CFDE9008ECCEB /* MapViewController.swift */; };
 		E50C79C01E4CFDE9008ECCEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E50C79BE1E4CFDE9008ECCEB /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71100B6320F4EC12006E8F3E /* Autocomplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autocomplete.swift; sourceTree = "<group>"; };
 		9F38BF454393A3D5F89DBC86 /* Pods-current-place-on-map.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-current-place-on-map.debug.xcconfig"; path = "Pods/Target Support Files/Pods-current-place-on-map/Pods-current-place-on-map.debug.xcconfig"; sourceTree = "<group>"; };
 		E50AE729DE90351174E95425 /* Pods-current-place-on-map.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-current-place-on-map.release.xcconfig"; path = "Pods/Target Support Files/Pods-current-place-on-map/Pods-current-place-on-map.release.xcconfig"; sourceTree = "<group>"; };
 		E50C79B71E4CFDE9008ECCEB /* current-place-on-map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "current-place-on-map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			children = (
 				E50C79BC1E4CFDE9008ECCEB /* MapViewController.swift */,
 				E50C79CD1E4CFE5D008ECCEB /* PlacesViewController.swift */,
+				71100B6320F4EC12006E8F3E /* Autocomplete.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				E50C79CE1E4CFE5D008ECCEB /* PlacesViewController.swift in Sources */,
 				E50C79BD1E4CFDE9008ECCEB /* MapViewController.swift in Sources */,
 				E50C79BB1E4CFDE9008ECCEB /* AppDelegate.swift in Sources */,
+				71100B6420F4EC13006E8F3E /* Autocomplete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
